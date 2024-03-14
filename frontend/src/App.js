@@ -32,43 +32,41 @@ function App() {
 
   return (
     <Router>
-      {loading ? (
-        <Loader />
-      ) : (
-        <>
-          <Header />
-          <Routes>
-            <Route path='/' element={<Home
-              youtubes={user.youtube}
-              timelines={user.timeline}
-              skills={user.skills}
-            />} />
-            <Route path='/about'
-              element={<About about={user.about} />} />
-            <Route path='/projects'
-              element={<Projects projects={user.projects} />} />
-            <Route path='/contact'
-              element={<Contact />} />
-            <Route
-              path="/account"
-              element={isAuthenticated ? <AdminPanel /> : <Login />}
-            />
-            <Route
-              path="/admin/timeline"
-              element={isAuthenticated ? <Timeline /> : <Login />}
-            />
-            <Route
-              path="/admin/youtube"
-              element={isAuthenticated ? <Youtube /> : <Login />}
-            />
-            <Route
-              path="/admin/project"
-              element={isAuthenticated ? <Project /> : <Login />}
-            />
-          </Routes>
-          <Footer />
-        </>
-      )}
+
+      <>
+        <Header />
+        <Routes>
+          <Route path='/' element={<Home
+            youtubes={user.youtube}
+            timelines={user.timeline}
+            skills={user.skills}
+          />} />
+          <Route path='/about'
+            element={<About about={user.about} />} />
+          <Route path='/projects'
+            element={<Projects projects={user.projects} />} />
+          <Route path='/contact'
+            element={<Contact />} />
+          <Route
+            path="/account"
+            element={isAuthenticated ? <AdminPanel /> : <Login />}
+          />
+          <Route
+            path="/admin/timeline"
+            element={isAuthenticated ? <Timeline /> : <Login />}
+          />
+          <Route
+            path="/admin/youtube"
+            element={isAuthenticated ? <Youtube /> : <Login />}
+          />
+          <Route
+            path="/admin/project"
+            element={isAuthenticated ? <Project /> : <Login />}
+          />
+        </Routes>
+        <Footer />
+      </>
+
     </Router>
   );
 }
